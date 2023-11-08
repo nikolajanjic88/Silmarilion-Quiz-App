@@ -6,7 +6,8 @@ class Guest
 {
   public function handle()
   {
-    if(isset($_SESSION['user'])) {
+    if(isset($_SESSION['user'])) 
+    {
       header('location: /menu');
       die();
     }

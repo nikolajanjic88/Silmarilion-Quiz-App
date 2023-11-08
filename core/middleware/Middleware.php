@@ -2,7 +2,8 @@
 
 namespace core\middleware;
 
-class Middleware {
+class Middleware 
+{
 
   public const MAP = [
     'guest' => Guest::class,

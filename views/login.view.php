@@ -3,12 +3,12 @@
   <div class="wrapper">
     <div class="form-box login">
       <h2>Login</h2>
-      <form action="" method="POST">
+      <form action="/login" method="POST">
         <div class="input-box">
           <span class="icon">
             <ion-icon name="mail"></ion-icon>
           </span>
-          <input type="email" name="email" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>">
+          <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>">
           <?php if(isset($errors['email'])): ?>
             <p class="error"><?= $errors['email'] ?></p>
           <?php endif ?>
@@ -17,7 +17,7 @@
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
-          <input type="password" name="password" placeholder="Password" value="<?= $_POST['password'] ?? '' ?>">
+          <input type="password" name="password" placeholder="Password">
           <?php if(isset($errors['password'])): ?>
             <p class="error"><?= $errors['password'] ?></p>
           <?php endif ?>

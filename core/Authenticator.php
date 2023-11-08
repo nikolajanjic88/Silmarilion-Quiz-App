@@ -1,14 +1,15 @@
 <?php
 
 namespace core;
+use core\Session;
 use core\Database;
 
 class Authenticator
 {
-  public function attempt($email, $password) {
-    $db = new Database();
+  public function attempt($email, $password) 
+  {
     $sql = "SELECT * FROM users WHERE email = ?";
-    $res = $db->query($sql, [$email])->find();
+    $res = (new Database())->query($sql, [$email])->find();
 
     if($res) {
       if(password_verify($password, $res['password'])) {
@@ -21,5 +22,10 @@ class Authenticator
     } 
 
     return false;
+  }
+
+  public function logout()
+  {
+    Session::destroy();
   }
 }

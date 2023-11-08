@@ -8,7 +8,7 @@
           <span class="icon">
             <ion-icon name="person"></ion-icon>
           </span>
-          <input type="text" name="username" placeholder="Username" value="<?= $_POST['username'] ?? '' ?>">
+          <input type="text" name="username" placeholder="Username" value="<?= old('username') ?>">
           <?php if(isset($errors['username'])): ?>
             <p class="error"><?= $errors['username'] ?></p>
           <?php endif ?>
@@ -17,7 +17,7 @@
           <span class="icon">
             <ion-icon name="mail"></ion-icon>
           </span>
-          <input type="email" name="email" placeholder="Email" value="<?= $_POST['email'] ?? '' ?>">
+          <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>">
           <?php if(isset($errors['email'])): ?>
             <p class="error"><?= $errors['email'] ?></p>
           <?php endif ?>
@@ -26,7 +26,7 @@
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
-          <input type="password" name="password" placeholder="Password" value="<?= $_POST['password'] ?? '' ?>">
+          <input type="password" name="password" placeholder="Password">
           <?php if(isset($errors['password'])): ?>
             <p class="error"><?= $errors['password'] ?></p>
           <?php endif ?>

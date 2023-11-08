@@ -7,7 +7,8 @@ class Router {
 
     protected $routes = [];
 
-    public function add($method, $uri, $controller) {
+    public function add($method, $uri, $controller) 
+    {
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
@@ -18,28 +19,35 @@ class Router {
         return $this;
     }
 
-    public function get($uri, $controller) {
+    public function get($uri, $controller) 
+    {
         return $this->add('GET', $uri, $controller);
     }
 
-    public function post($uri, $controller) {
+    public function post($uri, $controller) 
+    {
         return $this->add('POST', $uri, $controller);
     }
 
-    public function delete($uri, $controller) {
+    public function delete($uri, $controller) 
+    {
         return $this->add('DELETE', $uri, $controller);
     }
 
-    public function only($key) {
+    public function only($key) 
+    {
         //var_dump($this->routes);
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
         return $this;
     }
 
-    public function route($uri, $method) {
+    public function route($uri, $method) 
+    {
 
-        foreach($this->routes as $route) {
-            if($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+        foreach($this->routes as $route) 
+        {
+            if($route['uri'] === $uri && $route['method'] === strtoupper($method)) 
+            {
 
                 if($route['middleware'])
                 {
@@ -53,7 +61,8 @@ class Router {
         $this->abort();
     }
 
-    public function abort($code = 404) {
+    public function abort($code = 404)
+    {
         http_response_code($code);
         require_once \BASE_PATH . "views/$code.php";
         die();

@@ -1,7 +1,7 @@
 <?php
 
-session_unset();
-session_destroy();
+use core\Authenticator;
 
-header('location: /login');
-die();
+(new Authenticator)->logout();
+
+redirect('/login');
