@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Highscores</title>
+  <title>Silmarilion</title>
   <link rel="stylesheet" href="css/highscore.css" />
 </head>
 <body>

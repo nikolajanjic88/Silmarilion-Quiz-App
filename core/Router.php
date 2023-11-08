@@ -55,7 +55,7 @@ class Router {
                     (new $middleware)->handle();
                 }
             
-                return require BASE_PATH . 'Http/controllers/' . $route['controller'];
+                return require BASE_PATH . $route['controller'];
             } 
         }
         $this->abort();
