@@ -1,18 +1,15 @@
 <?php
 
-session_start();
+use core\Router;
+use core\Session;
 
 const BASE_PATH = __DIR__ . "/../";
 
+require_once BASE_PATH . "vendor/autoload.php";
+
+session_start();
+
 require_once BASE_PATH . "core/functions.php";
-
-spl_autoload_register(function($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    require_once(BASE_PATH . "{$class}.php");
-});
-
-use core\Router;
-use core\Session;
 
 $router = new Router();
 

@@ -1,0 +1,10 @@
+{
+    "name": "nikola/silmarilion-quiz-app-main",
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require": {}
+}
