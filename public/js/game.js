@@ -76,6 +76,7 @@ getNewQuestion = () => {
   });
 
   availableQuesions.splice(questionIndex, 1);
+  console.log(availableQuesions)
   acceptingAnswers = true;
 };
 
