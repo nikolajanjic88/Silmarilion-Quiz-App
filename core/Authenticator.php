@@ -15,7 +15,7 @@ class Authenticator
       if(password_verify($password, $res['password'])) {
           $_SESSION['user'] = [
               'id' => $res['id'],
-              'name' => $res['name']
+              'name' => $res['username']
           ];
           return true;
       }
